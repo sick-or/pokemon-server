@@ -1,0 +1,51 @@
+<main class="content">
+  <div class="db-container background-style">
+    <table class="pokemon-data background-style" >
+      <tr class="col-header">
+        <td>#</td>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Total</td>
+        <td>HP</td>
+        <td>Attack</td>
+        <td>Defence</td>
+        <td>Sp.Atk</td>
+        <td>Sp.Def</td>
+        <td>Speed</td>
+      </tr>
+      <% @pokemon[0..20].each_with_index do |pokemon,index| %>
+        <% if index%2 == 0 %>
+          <tr class="grey">
+            <td class="col-name">
+              <%= pokemon.pokedex %>
+              <figure class="pokemon-pic">
+                <%= image_tag('https://' + pokemon.icon)%>
+              </figure>
+            </td>
+            <td><%= pokemon.name%></td>
+            <td><%= render pokemon.poke_types %></td>
+            <td><%= pokemon.total %></td>
+            <%= render pokemon.stats %>
+          </tr>
+        <% else %>
+          <tr>
+            <td>
+              <%= pokemon.pokedex %>
+              <figure class="pokemon-pic">
+                <%= image_tag('https://' + pokemon.icon)%>
+              </figure>
+            </td>
+            <td><%= pokemon.name%></td>
+            <td><%= render pokemon.poke_types %></td>
+            <td><%= pokemon.total %></td>
+            <%= render pokemon.stats %>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+
+</main>
+
+
+

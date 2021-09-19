@@ -9,13 +9,33 @@
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    background-image: linear-gradient(to right bottom,white,#0096ca, #00698f , #00698f);
+    background-image: linear-gradient(to right bottom,white, #0096ca, #00698f , #00698f);
   }
 
   .sidebar {
     background: #D7E8D4;
     flex: 1;
+    max-height: 120vh;
+    overflow-y: scroll;
   }
+
+  .sidebar figure{
+      margin: 0;
+      border: 2px solid yellowgreen ;
+  }
+
+
+  .sidebar .pokemon-info{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: auto;
+  }
+
+  .pokemon-info span{
+      text-align: left;
+  }
+
   .main-col {
     display: flex;
     flex-direction: column;
@@ -203,7 +223,6 @@ footer {
     border-radius: 1vh;
     max-width: 90vh;
     max-height: 60vh;
-
 }
 
 div .about-me{
@@ -279,6 +298,7 @@ textarea{
     min-width: 70vh;
     margin: 0 5vh;
 }
+
 
 .article-form{
     display: flex;
@@ -393,4 +413,27 @@ div .article-form{
 .comment-destroy a{
     color: black;
     text-decoration: none;
+}
+
+.pokemon-data{
+    margin: 0;
+}
+
+.col-name{
+    display: flex;
+    flex-direction: row;
+}
+
+.grey{
+    background-color: #BBBBBB;
+}
+
+.pokemon-data figure{
+    margin: 0;
+}
+
+.pokemon-data tr{
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid darkgrey;
 }

@@ -25,6 +25,7 @@
         <li><%= link_to 'About', about_path %></li>
         <li><%=link_to 'My projects', my_projects_path %></li>
         <li>Pokemon</li>
+        <li><%= link_to 'Blog', 'articles#index' %></li>
       </ul>
     </header>
 
@@ -46,25 +47,26 @@
     </footer>
   </div>
 
+
   <nav class="sidebar">
-    <div class="pokemon-card">
-      <figure class="pokemon-pic">
-        <img>
-      </figure>
-      <div class="pokemon-info">
-        <span class="name">Name</span>
-        <span class="pokedex-number">#001</span>
-      </div>
-    </div>
-    <div class="pokemon-card">
-      <figure class="pokemon-pic">
-        <img>
-      </figure>
-      <div class="pokemon-info">
-        <span class="name">Name</span>
-        <span class="pokedex-number">#002</span>
-      </div>
-    </div>
+       <% @pokemon.each do |pokemon| %>
+        <div class="pokemon-card">
+          <figure class="pokemon-pic">
+            <%= image_tag('https://' + pokemon.icon)%>
+          </figure>
+          <div class="pokemon-info">
+            <span class="name"><%= link_to  pokemon.name , root_path %><%=  %></span>
+            <span class="pokedex-number">
+              <% case pokemon.pokedex.to_s.length
+                  when 1%><%= '#00' + pokemon.pokedex.to_s%>
+                <%when 2%><%= '#0' + pokemon.pokedex.to_s%>
+                <%when 3%><%= '#' + pokemon.pokedex.to_s%>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+
   </nav>
 
   </body>

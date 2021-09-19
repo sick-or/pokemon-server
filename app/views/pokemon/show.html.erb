@@ -1,0 +1,19 @@
+<main class="content">
+  <div class="post-content background-style">
+    <h1 class="title"><%= @pokemon_sel.name %></h1>
+    <p class="body"><%= @pokemon_sel.total %></p>
+
+    <hr>
+    <div>
+      <p class="tags"><%= @pokemon_sel.pokedex %></p>
+      <div class="edit-section">
+        <ul>
+          <li><%= link_to "Edit", edit_pokemon_path(@pokemon_sel) %></li>
+        </ul>
+        <%= @pokemon_sel.stats.inspect %>
+      </div>
+    </div>
+
+  </div>
+
+</main>

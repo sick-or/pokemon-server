@@ -1,5 +1,5 @@
 class MyProjectsController < ApplicationController
-  def show
-
+  def my
+    @pokemon = Pokemon.all
   end
 end

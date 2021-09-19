@@ -1,18 +1,23 @@
 class ArticlesController < ApplicationController
   def index
+    super
     @articles = Article.all
   end
 
   def show
+    super
     @article = Article.find(params[:id])
+    @pokemon = Pokemon.all
   end
 
   def new
     @article = Article.new
+    @pokemon = Pokemon.all
   end
 
   def create
     @article = Article.new(article_params)
+    @pokemon = Pokemon.all
 
     if @article.save
       redirect_to @article
@@ -23,10 +28,12 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @pokemon = Pokemon.all
   end
 
   def update
     @article = Article.find(params[:id])
+    @pokemon = Pokemon.all
 
     if @article.update(article_params)
       redirect_to @article

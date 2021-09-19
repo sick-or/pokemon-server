@@ -1,5 +1,5 @@
 class AboutController < ApplicationController
-  def show
-
+  def about
+    @pokemon = Pokemon.all
   end
 end
