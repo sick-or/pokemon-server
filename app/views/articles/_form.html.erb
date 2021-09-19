@@ -1,0 +1,31 @@
+<%= form_with model: article do |form| %>
+  <div class="form-content">
+    <div class="form-title">
+      <%= form.label :title %>
+      <%= form.text_field :title, placeholder: "Funny post name" %>
+      <% article.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="form-body">
+      <%= form.text_area :body, placeholder: "Make some content"%>
+      <% article.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="form-tags">
+      <%= form.label :tags %><br>
+      <%= form.text_area :tags, placeholder: "Key words" %>
+      <% article.errors.full_messages_for(:tags).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+
+    <%= form.submit %>
+  </div>
+<% end %>

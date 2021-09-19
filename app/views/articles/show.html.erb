@@ -1,0 +1,36 @@
+<main class="content">
+  <div class="post-content background-style">
+    <h1 class="title"><%= @article.title %></h1>
+    <p class="body"><%= @article.body %></p>
+
+    <hr>
+    <div>
+      <p class="tags"><%= @article.tags %></p>
+      <div class="edit-section">
+        <ul>
+          <li><%= link_to "Edit", edit_article_path(@article) %></li>
+          <li><%= link_to "Destroy", article_path(@article),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="comment-section">
+    <div class="comments-list background-style">
+      <h2>Comments</h2>
+      <% if @article.comments.empty? %>
+        <span>No comments yet</span>
+        <% else %>
+          <%= render @article.comments  %>
+      <% end %>
+    </div>
+
+    <div class="comment-new background-style">
+      <h2>Add a comment:</h2>
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+</main>

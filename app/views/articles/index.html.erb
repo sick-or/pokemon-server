@@ -1,0 +1,23 @@
+<main class="content">
+  <% @articles.each do |article| %>
+      <article class="blog-content">
+        <div class="article-body">
+          <h2 class="title"><%= article.title %></h2>
+          <span class="body"><%= article.body[0..200] + "....." %></span>
+          <a><%= link_to "to discussion...", article_path(article) %></a>
+        </div>
+        <hr>
+        <div class="article-description">
+          <p class="tags"><%=article.tags %></p>
+          <p class="date"><%= article.created_at.strftime("%b %d %Y, %l:%M%P") %></p>
+        </div>
+      </article>
+  <% end %>
+  <button class="redirect">
+    <%= link_to "New Article", new_article_path %>
+  </button>
+
+</main>
+
+
+

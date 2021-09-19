@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box; 
+  }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-image: linear-gradient(to right bottom,white,#0096ca, #00698f , #00698f);
+    
+    /*url('/img/waves-background.png');
+    background-repeat: no-repeat;
+    background-size: 50% 70%;*/
+  }
+  .sidebar {
+    background: #D7E8D4;
+    flex: 1;
+  }
+  .main-col {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content > article {
+    flex: 4;
+    min-height: 76vh;
+    border: 1px solid black;
+    padding: 1em;
+    margin: 0.8em 10vh;
+    border-radius: 1vh;
+  }
+
+  header, footer {
+    background: yellowgreen;
+    height: 12vh;
+    font-size: 20px;
+  }
+
+  header, footer, article, nav {
+    padding: 0.8em;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header figure{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar .pokemon-card{
+    height: 10vh;
+    border: 1px solid black;
+    padding: 0.5vh;
+    margin: 1vh 0;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.pokemon-card .pokemon-info{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5vh;
+    align-items: center;
+}

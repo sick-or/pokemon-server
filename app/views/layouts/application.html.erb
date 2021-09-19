@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PokemonApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="main-col">
+    <header>
+      <div class="logo-container">
+
+        <strong><%= link_to '', root_path %>Sick ink</strong>
+        <figure class="logo">
+           <%= image_tag("pokeball-logo.png", height: '40vh' ) %>
+        </figure>
+      </div>
+      <ul class="navigation">
+        <li><%= link_to 'About', about_path %></li>
+        <li><%=link_to 'My projects', my_projects_path %></li>
+        <li>Pokemon</li>
+      </ul>
+    </header>
+
+    <div class="page-content">
+      <%= yield %>
+    </div>
+
+    <footer class="page-footer">
+      <div class="info-desc">
+        <span>LinkedIn:</span>
+        <span>mail:</span>
+        <span>mob:</span>
+      </div>
+      <div class="info">
+        <span class="linked-in"><a href="https://www.linkedin.com/in/sikorski-anton/">Sikorski Anton</a></span>
+        <span  class="footer-email">sikorskiy.anton@mail.ru</span>
+        <span  class="footer-phone">+375 (33) 320-79-76</span>
+      </div>
+    </footer>
+  </div>
+
+  <nav class="sidebar">
+    <div class="pokemon-card">
+      <figure class="pokemon-pic">
+        <img>
+      </figure>
+      <div class="pokemon-info">
+        <span class="name">Name</span>
+        <span class="pokedex-number">#001</span>
+      </div>
+    </div>
+    <div class="pokemon-card">
+      <figure class="pokemon-pic">
+        <img>
+      </figure>
+      <div class="pokemon-info">
+        <span class="name">Name</span>
+        <span class="pokedex-number">#002</span>
+      </div>
+    </div>
+  </nav>
+
+  </body>
+</html>

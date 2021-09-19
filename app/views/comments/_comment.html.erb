@@ -1,0 +1,24 @@
+<div class="comment">
+  <div class="comment-body">
+    <div class="comment-head">
+      <div class="comment-name">
+        <%= comment.commenter %>
+      </div>
+
+      <div class="comment-date">
+        <%= comment.created_at.strftime("%B %d %Y, %l:%M%P") %>
+      </div>
+    </div>
+
+    <div class="comment-content">
+      <%= comment.body %>
+    </div>
+  </div>
+  <hr>
+  <div class="comment-destroy">
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+  </div>
+ </div>
+
