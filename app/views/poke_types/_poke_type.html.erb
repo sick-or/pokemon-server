@@ -1,3 +1,24 @@
 <div>
-  <%= poke_type.poke_type %>
+    <% case poke_type.poke_type
+        when 'Normal'%><div class="normal poke-type">NORMAL</div>
+      <%when 'Fire'%><div class="fire poke-type">FIRE</div>
+      <%when 'Water' %><div class="water poke-type">WATER</div>
+      <%when 'Electric' %><div class="electric poke-type">ELECTRIC</div>
+      <%when 'Grass' %><div class="grass poke-type">GRASS</div>
+      <%when 'Ice' %><div class="ice poke-type">ICE</div>
+      <%when 'Fighting' %><div class="fighting poke-type">FIGHTING</div>
+      <%when 'Poison' %><div class="poison poke-type">POISON</div>
+      <%when 'Ground' %><div class="ground poke-type">GROUND</div>
+      <%when 'Flying' %><div class="flying poke-type">FLYING</div>
+      <%when 'Psychic' %><div class="psychic poke-type">PSYCHIC</div>
+      <%when 'Bug' %><div class="bug poke-type">BUG</div>
+      <%when 'Rock' %><div class="rock poke-type">ROCK</div>
+      <%when 'Ghost' %><div class="ghost poke-type">GHOST</div>
+      <%when 'Dragon' %><div class="dragon poke-type">DRAGON</div>
+      <%when 'Dark' %><div class="dark poke-type">DARK</div>
+      <%when 'Steel' %><div class="steel poke-type">STEEL</div>
+      <%when 'Fairy' %><div class="fairy poke-type">FAIRY</div>
+  <% else %>
+      <div><%= poke_type.poke_type %></div>
+    <% end %>
 </div>

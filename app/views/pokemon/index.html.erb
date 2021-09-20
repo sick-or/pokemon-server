@@ -14,9 +14,9 @@
         <th>Speed</th>
       </tr>
 
-      <% @pokemon[0..20].each_with_index do |pokemon,index| %>
+      <% @pokemon[0..150].each_with_index do |pokemon,index| %>
         <% if index%2 == 0 %>
-          <tr class="grey">
+          <tr class="data-row grey">
             <td class="col-pic">
               <figure class="pokemon-pic">
                 <%= image_tag('https://' + pokemon.icon)%>
@@ -33,7 +33,7 @@
             <%= render pokemon.stats %>
           </tr>
         <% else %>
-          <tr>
+          <tr class="data-row">
             <td class="col-pic">
               <figure class="pokemon-pic">
                 <%= image_tag('https://' + pokemon.icon)%>
