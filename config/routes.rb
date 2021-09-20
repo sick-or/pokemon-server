@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pokemon#index"
+  root "articles#index"
 
   get '/about', to: 'about#about'
   get '/my_projects', to: 'my_projects#my'
