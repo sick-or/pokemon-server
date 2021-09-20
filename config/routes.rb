@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  
   resources :pokemon do
     resources :stats
     resources :poke_types

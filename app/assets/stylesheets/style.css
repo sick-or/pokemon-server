@@ -12,11 +12,21 @@
     background-image: linear-gradient(to right bottom,white, #0096ca, #00698f , #00698f);
   }
 
+  a{
+      text-decoration: none;
+      text-align: left;
+  }
+
+  a:hover{
+      text-decoration: underline;
+  }
+
   .sidebar {
     background: #D7E8D4;
     flex: 1;
-    max-height: 120vh;
-    overflow-y: scroll;
+      max-height: 120vh;
+    overflow: hidden;
+    padding: 0.8em;
   }
 
   .sidebar figure{
@@ -24,22 +34,19 @@
       border: 2px solid yellowgreen ;
   }
 
-
-  .sidebar .pokemon-info{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin: auto;
-  }
-
-  .pokemon-info span{
-      text-align: left;
-  }
+.sidebar .pokemon-list-container{
+    height: 100%;
+    overflow-y: scroll;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 0 0.8em;
+    background-color: #d6dedf;
+}
 
   .main-col {
     display: flex;
     flex-direction: column;
-    flex: 5;
+    flex: 4;
     justify-content: space-between;
   }
   .content {
@@ -167,15 +174,39 @@ footer {
     border-radius: 1vh;
     display: flex;
     flex-direction: row;
+    background-color: #D7E8D4;
 }
 
 .pokemon-card .pokemon-info{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     padding: 0.5vh;
+    margin: 0 0.8em;
+    font-weight: bold;
+}
+
+.card-types{
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
+.card-types .poke-type{
+    font-size: 10px;
+    margin: 0 0.2em;
+    padding: 0 0.4em;
+}
+
+.pokedex-number{
+    display: flex;
+    flex-direction: row;
+}
+
+.pokemon-info .name a{
+    font-size: 18px;
+    color: #0096ca;
+}
 .article-body{
     display: flex;
     flex-direction: column;
@@ -477,6 +508,7 @@ div .article-form{
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+    margin: 0.3em 0;
 }
 
 .normal{

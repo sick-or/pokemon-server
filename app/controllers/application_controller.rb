@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id])
+    @pokemon = Pokemon.all
+
   end
 end

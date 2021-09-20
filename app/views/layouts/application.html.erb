@@ -15,7 +15,6 @@
   <div class="main-col">
     <header>
       <div class="logo-container">
-
         <strong><%= link_to '', root_path %>Sick ink</strong>
         <figure class="logo">
            <%= image_tag("pokeball-logo.png", height: '40vh' ) %>
@@ -23,9 +22,9 @@
       </div>
       <ul class="navigation">
         <li><%= link_to 'About', about_path %></li>
-        <li><%=link_to 'My projects', my_projects_path %></li>
-        <li><%= link_to 'Pokemon', 'pokemon#index' %></li>
-        <li><%= link_to 'Blog', 'articles#index' %></li>
+        <li><%= link_to 'My projects', my_projects_path %></li>
+        <li><%= link_to 'Pokemon', pokemon_index_path %></li>
+        <li><%= link_to 'Blog', root_path %></li>
       </ul>
     </header>
 
@@ -49,25 +48,34 @@
 
 
   <nav class="sidebar">
+    <div class="pokemon-list-container">
        <% @pokemon.each do |pokemon| %>
         <div class="pokemon-card">
           <figure class="pokemon-pic">
             <%= image_tag('https://' + pokemon.icon)%>
           </figure>
           <div class="pokemon-info">
-            <span class="name"><%= link_to  pokemon.name , root_path %><%=  %></span>
-            <span class="pokedex-number">
+            <span class="name"><%= link_to  pokemon.name , pokemon_path(pokemon) %></span>
+            <div class="pokedex-number">
               <% case pokemon.pokedex.to_s.length
                   when 1%><%= '#00' + pokemon.pokedex.to_s%>
                 <%when 2%><%= '#0' + pokemon.pokedex.to_s%>
                 <%when 3%><%= '#' + pokemon.pokedex.to_s%>
               <% end %>
-            </span>
+              <div class="card-types"><%=render  pokemon.poke_types %></div>
+            </div>
+
           </div>
         </div>
       <% end %>
-
+    </div>
   </nav>
-
+<script>
+  function sidebarResize(){
+      document.querySelector('.sidebar').style.maxHeight = document.querySelector('.page-content').clientHeight +'px';
+  }
+</script>
   </body>
+
+
 </html>
