@@ -1,5 +1,6 @@
 <main class="content">
 
+
   <div class="background-style">
       <span>Я - Антон Сикорский, начинающий разработчик веб-приложений. Всегда стараюсь всесторонне развиваться, пробую что-то новое с целью приобретения жизненно полезных навыков. Из нынешних интересов: игра на барабанах, изучение языков программирования (C++, Ruby, JavaScript) и технологий, таких как, например, sql, http, html, css, различных APIs, протоколов (и это даже не весь список!). Также увлекаюсь физикой и научно-исследовательской деятельностью, потому и заканчиваю на данный момент физический факультет Белорусского государственного университета по специальности научно-исследовательская деятельность. В дальнейшем твердо настроен глубже изучать сферу IT-технологий и преуспеть в ней. На данном этапе уже сделана пара игр на языке разработки Ruby и постепенно ведется разработка компьютерной игры в жанре визуального романа. Быстро учусь, усердно работаю и, конечно, занимаюсь тем, что мне нравится, - программированием.
       </span>
@@ -19,8 +20,9 @@
     </div>
 
     <button id='nextBtn'>Next</button>
+  </div>
 
-    <script>
+  <script >
       const slider = document.querySelector('.slide');
       const slideImages = document.querySelectorAll('.slide img');
 
@@ -42,7 +44,6 @@
               counter++;
               slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
           }
-
       });
 
       prevBtn.addEventListener(('click'), () => {
@@ -58,11 +59,11 @@
       });
 
       slider.addEventListener('trnsitioned', () => {
-        if (slideImages[counter].class === 'lastClone') {
-            slide.style.transition = none;
-            counter = slideImages.length - 2;
-            slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-        }
+          if (slideImages[counter].class === 'lastClone') {
+              slide.style.transition = none;
+              counter = slideImages.length - 2;
+              slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+          }
           if (slideImages[counter].class === 'firstClone') {
               slide.style.transition = none;
               counter = slideImages.length - counter;
@@ -70,7 +71,6 @@
           }
 
       });
-    </script>
-  </div>
+  </script>
 
 </main>

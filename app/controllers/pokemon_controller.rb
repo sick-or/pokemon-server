@@ -1,11 +1,11 @@
 class PokemonController < ApplicationController
   def index
-    @pokemon = Pokemon.all
+    @pokemon = Pokemon.all.includes(:poke_types,:stats)
   end
 
   def show
     @pokemon_sel = Pokemon.find(params[:id])
-    @pokemon = Pokemon.all
+    @pokemon = Pokemon.all.includes(:poke_types, :stats)
   end
 
   def new

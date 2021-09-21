@@ -23,7 +23,7 @@
       <ul class="navigation">
         <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'My projects', my_projects_path %></li>
-        <li><%= link_to 'Pokemon', pokemon_index_path %></li>
+        <li><%= link_to 'Pokemon', '/pokemon' %></li>
         <li><%= link_to 'Blog', root_path %></li>
       </ul>
     </header>
@@ -49,7 +49,7 @@
 
   <nav class="sidebar">
     <div class="pokemon-list-container">
-       <% @pokemon.each do |pokemon| %>
+      <% @pokemon.each do |pokemon| %>
         <div class="pokemon-card">
           <figure class="pokemon-pic">
             <%= image_tag('https://' + pokemon.icon)%>
